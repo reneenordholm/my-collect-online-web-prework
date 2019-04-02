@@ -1,13 +1,10 @@
-def my_collect(languages)
-  languages do |language|
-    language.upcase
-  end
-end
+def my_collect(collection)
 
-def my_collect(students)
-  names = []
-  students.each do |stu|
-    names << stu.split(" ").first
-  end
-  names
+     x = 0
+    new_arr = []
+    while x < collection.length
+        new_arr << yield(collection[x])
+        x += 1
+    end
+    new_arr
 end
